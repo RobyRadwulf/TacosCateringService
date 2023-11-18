@@ -1,0 +1,204 @@
+body {
+    background-image: url('tacosfondo2.jpg');
+    background-size: cover; /* Ajusta la imagen al tamaño de la pantalla */
+    background-repeat: no-repeat; /* Evita que la imagen se repita en el fondo */
+    position: relative; /* Establece la posición relativa del body */
+
+  }
+  
+  body::before {
+    content: ""; /* Agrega contenido antes del body */
+    position: absolute; /* Establece la posición absoluta del contenido */
+    top: 0; /* Coloca el contenido en la parte superior */
+    left: 0; /* Coloca el contenido en la parte izquierda */
+    width: 100%; /* Establece el ancho al 100% */
+    height: 101.5%; /* Establece la altura al 100% */
+    background-color: rgba(0, 0, 0, 0.7); /* Establece el color de fondo a un negro semitransparente */
+    z-index: -1; /* Establece un índice z para que la capa esté detrás de todo el contenido */
+  }
+
+body {
+    color: white; /*hace todo el texto del body blanco*/
+}
+
+.inputs .container h1{ /*modificar el titulo*/
+    text-align: left; 
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.payment .container h2{ /*modificar subtitulo*/
+    text-align: left;
+    margin-top: 20px;
+}
+.container label{ /*modificar los labels*/
+    text-align: center;
+    margin: 10px;
+    text-align: justify;
+}
+
+.inputs{ /*darle margenes superiores a los inputs*/
+    margin-top: 30px;
+}
+
+input{  /*asignar tamaño de font y del input, paddiing del contenido y redondear*/
+    width: 48%;
+    font-weight: 400;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+.row{ /* se modifican las filas para que abraquen el 100% de la columna y de igual manera el grid y el margen inferior*/
+    width: 100%; 
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+    grid-gap: 20px 30px;
+    margin-bottom: 20px;
+}
+
+.input-field { /* se genera un flex de los inputs y el texto se alinea a la izq*/
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1em;
+    text-align: left;
+}
+
+.input-field label { /* se hace el texto bold*/
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}
+
+.input-field select { /* modificar padding, tamaño del texto y color*/
+    padding: 0.5em;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 0.25em;
+}
+
+.btn-primary { /* color de los botones */
+    background-color: #b25446;
+    border-color: #b25446;
+    color: #fff;
+    text-align: center;
+    display: block;
+    margin: auto;
+  }
+
+.btn-primary:hover { /* color de los botones al hacer hover con el mouse*/
+    background-color: #823635;
+    border-color: #823635;
+    color: #fff;
+    margin-bottom: auto;
+  }
+
+  .input-columns { /* flex de las columnas*/
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .input-column { /* las columnas abarcan cada una el 48% para dejar un espacio entre los elementos*/
+    flex-basis: 48%;
+  }
+  
+    .input-field input[type="text"], 
+    .input-field input[type="email"], 
+    .input-field input[type="tel"], 
+    .input-field input[type="date"],
+    .input-field select {
+    width: 100%;
+    box-sizing: border-box;
+    border-color: white;
+    }
+
+.full-width { /* abarcar el 100% del content*/
+    width: 100%;
+}
+
+
+  @media (max-width: 768px) { /* responsive*/
+    .input-columns {
+      flex-wrap: wrap;
+    }
+    
+    .input-column {
+      flex-basis: 100%;
+    }
+  }
+
+  .footer .containerfooter p{ /* color texto y margeners*/
+    color: oldlace;
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+input[type="range"] { /* modificar apariencia del slider de meseros*/
+  -webkit-appearance: none;
+  width: 100%;
+  height: 5px; /* cambiar el valor de height para hacerlo más delgado */
+  background: #ddd;
+  outline: none;
+  opacity: 1;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+  border-radius: 10px;
+  border-color: white;
+}
+
+input[type="range"]::-webkit-slider-thumb { /* modificar el thumb del slider*/
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background: #b25446;
+  cursor: pointer;
+  border-radius: 50%;
+  margin-top: -6px; /* ajustar la posición del thumb para que esté centrado en el range */
+  border-color: white;
+}
+
+input[type="range"]::-moz-range-thumb { /* */
+  width: 15px;
+  height: 15px;
+  background: #b25446;
+  cursor: pointer;
+  border-radius: 50%;
+  margin-top: -6px;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  height: 5px; /* ajustar el valor de height para que coincida con el valor de height del input[type="range"] */
+  background: #b25446; /* cambiar el color de fondo para que coincida con el color del botón */
+  border-radius: 10px;
+}
+
+input[type="range"]::-moz-range-track { /* modificar el track del slider */
+  height: 3px;
+  background: #b25446;
+  border-radius: 10px;
+}
+
+.button-container1 {
+    display: flex;
+    justify-content: flex-start; /* Alinea los elementos al principio del contenedor */
+    margin-top: 20px; /* Añade margen para el espaciado */
+}
+
+.button-container1 button {
+    margin-right: 10px; /* Ajusta según sea necesario */
+}
+
+.button-container2 {
+    display: flex;
+    justify-content: flex-start; /* Alinea los elementos al principio del contenedor */
+    margin-top: 20px; /* Añade margen para el espaciado */
+}
+
+.button-container2 button {
+    margin-right: 10px; /* Ajusta según sea necesario */
+}
+
+.input-field.comments{
+    padding: 10px;
+}
+
+

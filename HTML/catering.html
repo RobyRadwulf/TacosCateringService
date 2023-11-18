@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taqueria Catering - Request a Service</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="style2.css">
+</head>
+
+<body>
+<header>
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <div class="container">
+            <a class="navbarIndx" href="index.html">
+                <img src="tacologo.png" alt="El taquito gordo feliz" height="60" width="60">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="catering.html">Catering Services</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="aboutUs.html">About Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <section class="inputs" id="inputs">
+        <div class="container">
+            <h1>Request a Catering Service</h1>
+            <form id="cateringForm" action="http://localhost:3000/api/catering" method="POST">
+                <div class="input-columns">
+                    <div class="input-column">
+                        <div class="input-field">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="input-field">
+                            <label for="address">Address</label>
+                            <input type="text" id="address" name="address" required>
+                        </div>
+                        <div class="input-field">
+                            <label for="neighborhood">Neighborhood</label>
+                            <select id="neighborhood" name="neighborhood" required>
+                                <option value="San Ramon Norte I">San Ramon Norte I</option>
+                                <option value="Montes de Ame">Montes de Ame</option>
+                                <option value="Santa Gertrudis Copo">Santa Gertrudis Copo</option>
+                                <option value="Montebello">Montebello</option>
+                            </select>
+                        </div>
+                        <div class="input-field">
+                            <label for="zip">Zip Code</label>
+                            <input type="text" id="zip" name="zip" required>
+                        </div>
+                        <div class="input-field">
+                            <label for="addons">Addons:</label>
+                            <select id="addons" name="addons" multiple="">
+                                <option value="lemons-extra">Extra Lemons</option>
+                                <option value="pineapple-extra">Extra Pineapple</option>
+                                <option value="spicy-salsa-extra">Extra spicy salsa</option>
+                                <option value="guacamole-extra">Extra Guacamole</option>
+                            </select>
+                            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                        </div>
+                        <div class="input-field">
+                            <label for="hora">Time</label>
+                            <input type="time" id="hora" name="hora" required class="full-width">
+                        </div>
+                    </div>
+                    <div class="input-column">
+                        <div class="input-field">
+                            <label for="phone">Cellular Phone</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="input-field">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email">
+                        </div>
+                        <div class="input-field">
+                            <label for="service">Catering Service Type</label>
+                            <select id="service" name="service" required>
+                                <option value="Taco Bar">Taco Bar</option>
+                                <option value="Burrito Bowl">Burrito Bowl</option>
+                                <option value="Fajita Bar">Fajita Bar</option>
+                            </select>
+                        </div>
+                        <div class="input-field">
+                            <label for="date">Date</label>
+                            <input type="date" id="date" name="date" required>
+                        </div>
+                        <div class="input-field">
+                            <label for="comments">Additional Comments</label>
+                            <textarea id="comments" placeholder="Describe Other Comments in detail here"
+                                      rows="4" style="resize: none;"></textarea>
+                        </div>
+                        <div class="input-field">
+                            <label for="Waitresses">Waitresses Requested <span id="Waitresses_value"> 3 </span>
+                            </label><br>
+                            <input type="range" id="Waitresses" name="Waitresses" min="1" max="7" required
+                                   class="full-width">
+                            <script>
+                                var Waitresses = document.getElementById("Waitresses");
+                                var Waitresses_value = document.getElementById("Waitresses_value");
+
+                                // Actualiza el valor de la etiqueta span cuando el usuario mueve el control deslizante
+                                Waitresses.oninput = function () {
+                                    Waitresses_value.innerHTML = this.value;
+                                }
+                            </script>
+                        </div>
+                    </div>
+                </div>
+                <div class="button-container1">
+                    <button type="button" class="btn btn-primary" onclick="validateAndSubmit()">Save data</button>
+                    <button type="button" class="btn btn-secondary" onclick="resetForm()">Reset form</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <section class="payment" id="payment">
+        <div class="container">
+            <h2>Payment Information</h2>
+            <form action="#" method="POST">
+                <div class="input-field">
+                    <label for="Card">Card</label>
+                    <select id="Card" name="Card" required>
+                        <option value="Visa">Visa</option>
+                        <option value="Master Card">Master Card</option>
+                        <option value="American Express">American Express</option>
+                    </select>
+                </div>
+                <div class="input-columns" style="display: flex;">
+                    <div class="input-column">
+                        <div class="input-field">
+                            <label for="card-name" style="width: 150px;">Cardholder Name</label>
+                            <input type="text" class="form-control" id="card-name" name="card-name"
+                                   placeholder="Enter cardholder name" required>
+                        </div>
+                        <div class="input-field">
+                            <label for="card-number" style="width: 150px;">Card Number</label>
+                            <input type="text" class="form-control" id="card-number" name="card-number"
+                                   placeholder="Enter card number" required>
+                        </div>
+                    </div>
+                    <div class="input-column">
+                        <div class="input-field">
+                            <label for="expiry-date" style="width: 100px;">Expiry Date</label>
+                            <input type="text" class="form-control" id="expiry-date" name="expiry-date"
+                                   placeholder="MM / YY" required>
+                        </div>
+                        <div class="input-field">
+                            <label for="cvv" style="width: 100px;">CVV</label>
+                            <input type="text" class="form-control" id="cvv" name="cvv"
+                                   placeholder="Enter CVV" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="button-container2">
+                    <button type="button" class="btn btn-primary" onclick="validateAndSubmit()">Submit Payment</button>
+                    <button type="button" class="btn btn-secondary" onclick="resetForm()">Reset form</button>
+                </div>
+            </form>
+        </div>
+    </section>
+</main>
+
+<footer class="text-center" id="footer">
+    <div class="containerfooter">
+        <div class="row">
+            <div class="col-lg-12">
+                <p class="text-center">&copy; 2023 El Taquito gordo feliz. All Rights Reserved.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<script src="Catering.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</body>
+
+</html>
+
+    

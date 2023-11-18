@@ -1,0 +1,105 @@
+
+body {
+    background-image: url('tacosfondo3.jpg');
+    background-size: cover; /* Ajusta la imagen al tamaño de la pantalla */
+    background-repeat: no-repeat; /* Evita que la imagen se repita en el fondo */
+    position: relative; /* Establece la posición relativa del body */
+
+  }
+  
+  body::before {
+    content: ""; /* Agrega contenido antes del body */
+    position: absolute; /* Establece la posición absoluta del contenido */
+    top: 0; /* Coloca el contenido en la parte superior */
+    left: 0; /* Coloca el contenido en la parte izquierda */
+    width: 100%; /* Establece el ancho al 100% */
+    height: 100%; /* Establece la altura al 100% */
+    background-color: rgba(0, 0, 0, 0.7); /* Establece el color de fondo a un negro semitransparente */
+    z-index: -1; /* Establece un índice z para que la capa esté detrás de todo el contenido */
+  }
+
+  body { /* hacer todo el texto del body color blanco*/
+    color: white;
+}
+
+.info { /* padding y margenes de la información */
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: 20px;
+    margin-top: 50px; 
+}
+
+.info .title h1{ /* color, centrado y bold de h1 de la información*/
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+.about .container h2{ /* centrado y margen de h2 en about */
+    text-align: center;
+    margin-top: 20px;
+}
+
+.photos .container h2{ /* alinear titulo del photos a la izq y darle margenes inferior*/
+    text-align: left;
+    margin-top: 20px;
+}
+
+.slider { /* crear un flex de las imagenes y centrarlas dentro del slider*/
+  display: flex;
+  justify-content: center;
+}
+
+.slider { /*posicion relativa para hacer responsive el slider*/
+    width: 100%;
+    height: 400px;
+    align-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .slider img { /* hacer que las imagenes abarquen el 100% del slider y hacer su posición absoluta dentro del slider*/
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+  
+  .slider img:first-child { /* opcaciodad de la imagen */
+    opacity: 1;
+  }
+  
+  .slider button { /* modificar botones del slider, posición, color del item y del fondo*/
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+  }
+  
+  .slider button.prev { /* botton izq */
+    left: 0;
+  }
+  
+  .slider button.next { /* botton der */
+    right: 0;
+  }
+
+  .photos .container{ /* alinear items del container de photos*/
+    align-items: center ;
+  }
+
+  .footer .containerfooter p{ /* modificar el footer y darle margenes*/
+    color: oldlace;
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+

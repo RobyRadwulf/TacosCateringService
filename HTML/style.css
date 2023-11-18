@@ -1,0 +1,123 @@
+
+body {
+    background-image: url('tacosfondo.png');
+    background-size: cover; /* Ajusta la imagen al tamaño de la pantalla */
+    background-repeat: no-repeat; /* Evita que la imagen se repita en el fondo */
+    position: relative; /* Establece la posición relativa del body */
+
+  }
+  
+  body::before {
+    content: ""; /* Agrega contenido antes del body */
+    position: absolute; /* Establece la posición absoluta del contenido */
+    top: 0; /* Coloca el contenido en la parte superior */
+    left: 0; /* Coloca el contenido en la parte izquierda */
+    width: 100%; /* Establece el ancho al 100% */
+    height: 100%; /* Establece la altura al 100% */
+    background-color: rgba(0, 0, 0, 0.7); /* Establece el color de fondo a un negro semitransparente */
+    z-index: -1; /* Establece un índice z para que la capa esté detrás de todo el contenido */
+  }
+.welcome { /* modificar section welcome */
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: 20px;
+    margin-top: 50px; 
+}
+
+.welcome .title h1{ /* cambiar color y hacer bold h1 */
+    color: oldlace;
+    font-weight: bold;
+}
+.welcome .title p{  /* color del texto p en el welcome y title*/
+    color: oldlace;
+}
+
+.cateringservices{  /* padding de catering*/
+    padding-top: 30px;
+    padding-bottom: 50px; 
+}
+
+.reviews{ /* padding reviews*/
+    padding-top: 30px;
+    padding-bottom: 50px; 
+}
+
+.cateringservices .container h2{ /* modificar color, marge y hacer bold h2 del catering*/
+    color: oldlace;
+    border-bottom: 20px;
+    font-weight: bold;
+}
+
+.cateringservices .container p{ /* modificar color, marge y hacer bold p del catering*/
+    color: oldlace;
+}
+
+.cateringservices .container .card-text{ /* modificar color y justificar texto de las tarjetas de catering*/
+    text-align: justify;
+    color: black
+}
+
+.btn-primary { /* color de los botones */
+    background-color: #b25446;
+    border-color: #b25446;
+    color: #fff;
+    text-align: center;
+    display: block;
+    margin: auto;
+  }
+
+.btn-primary:hover { /* color de los botones al hacer hover con el mouse*/
+    background-color: #823635;
+    border-color: #823635;
+    color: #fff;
+    margin-bottom: auto;
+  }
+
+.cateringservices .catering ul{ /* modificar colores de los elementos*/
+    color: oldlace;
+}
+
+.reviews .review h2{
+    color: oldlace;
+}
+
+.reviews .review p{
+    color: oldlace;
+}
+
+.reviews .review .card-text{
+    color: black
+}
+
+.aboutus .AboutUs h2{
+    color: oldlace;
+}
+
+.aboutus .AboutUs p{
+    color: oldlace;
+}
+
+.aboutus{ 
+    padding-bottom: 50px; 
+}
+
+.footer .containerfooter p{
+    color: oldlace;
+}
+
+.reviews .card{
+    margin: 20px;
+    margin-left: 200px;
+    margin-right: 200px;
+}
+
+.header{
+    border: oldlace 10px;
+}
+
+.footer .containerfooter p{
+    color: oldlace;
+    margin-bottom: 60px;
+}
+
