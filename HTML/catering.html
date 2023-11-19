@@ -49,7 +49,7 @@
                     <div class="input-column">
                         <div class="input-field">
                             <label for="name">Full Name</label>
-                            <input type="text" id="name" name="name" required>
+                            <input type="text" id="name" name="full_name" required>
                         </div>
                         <div class="input-field">
                             <label for="address">Address</label>
@@ -66,7 +66,7 @@
                         </div>
                         <div class="input-field">
                             <label for="zip">Zip Code</label>
-                            <input type="text" id="zip" name="zip" required>
+                            <input type="text" id="zip" name="zip_code" required>
                         </div>
                         <div class="input-field">
                             <label for="addons">Addons:</label>
@@ -80,7 +80,7 @@
                         </div>
                         <div class="input-field">
                             <label for="hora">Time</label>
-                            <input type="time" id="hora" name="hora" required class="full-width">
+                            <input type="time" id="hora" name="time" required class="full-width">
                         </div>
                     </div>
                     <div class="input-column">
@@ -94,7 +94,7 @@
                         </div>
                         <div class="input-field">
                             <label for="service">Catering Service Type</label>
-                            <select id="service" name="service" required>
+                            <select id="service" name="service_type" required>
                                 <option value="Taco Bar">Taco Bar</option>
                                 <option value="Burrito Bowl">Burrito Bowl</option>
                                 <option value="Fajita Bar">Fajita Bar</option>
@@ -106,13 +106,13 @@
                         </div>
                         <div class="input-field">
                             <label for="comments">Additional Comments</label>
-                            <textarea id="comments" placeholder="Describe Other Comments in detail here"
+                            <textarea id="comments" name="comments" placeholder="Describe Other Comments in detail here"
                                       rows="4" style="resize: none;"></textarea>
                         </div>
                         <div class="input-field">
                             <label for="Waitresses">Waitresses Requested <span id="Waitresses_value"> 3 </span>
                             </label><br>
-                            <input type="range" id="Waitresses" name="Waitresses" min="1" max="7" required
+                            <input type="range" id="Waitresses" name="Waitresses_requested" min="1" max="7" required
                                    class="full-width">
                             <script>
                                 var Waitresses = document.getElementById("Waitresses");
@@ -126,21 +126,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="button-container1">
-                    <button type="button" class="btn btn-primary" onclick="validateAndSubmit()">Save data</button>
-                    <button type="button" class="btn btn-secondary" onclick="resetForm()">Reset form</button>
-                </div>
-            </form>
-        </div>
-    </section>
-
-    <section class="payment" id="payment">
-        <div class="container">
-            <h2>Payment Information</h2>
-            <form action="#" method="POST">
                 <div class="input-field">
                     <label for="Card">Card</label>
-                    <select id="Card" name="Card" required>
+                    <select id="Card" name="Card_type" required>
                         <option value="Visa">Visa</option>
                         <option value="Master Card">Master Card</option>
                         <option value="American Express">American Express</option>
@@ -150,19 +138,19 @@
                     <div class="input-column">
                         <div class="input-field">
                             <label for="card-name" style="width: 150px;">Cardholder Name</label>
-                            <input type="text" class="form-control" id="card-name" name="card-name"
+                            <input type="text" class="form-control" id="card-name" name="cardholder_name"
                                    placeholder="Enter cardholder name" required>
                         </div>
                         <div class="input-field">
                             <label for="card-number" style="width: 150px;">Card Number</label>
-                            <input type="text" class="form-control" id="card-number" name="card-number"
+                            <input type="text" class="form-control" id="card-number" name="card_number"
                                    placeholder="Enter card number" required>
                         </div>
                     </div>
                     <div class="input-column">
                         <div class="input-field">
                             <label for="expiry-date" style="width: 100px;">Expiry Date</label>
-                            <input type="text" class="form-control" id="expiry-date" name="expiry-date"
+                            <input type="text" class="form-control" id="expiry-date" name="expiry_date"
                                    placeholder="MM / YY" required>
                         </div>
                         <div class="input-field">
@@ -172,9 +160,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="button-container2">
-                    <button type="button" class="btn btn-primary" onclick="validateAndSubmit()">Submit Payment</button>
-                    <button type="button" class="btn btn-secondary" onclick="resetForm()">Reset form</button>
+                <div class="button-container1">
+                    <button type="button" class="btn btn-primary" onclick="validateAndSubmit('cateringForm')">Save data & confirm Payment</button>
+                    <button type="button" class="btn btn-secondary" onclick="resetForm('cateringForm')">Reset form</button>
                 </div>
             </form>
         </div>
@@ -195,7 +183,6 @@
 <script src="Catering.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </body>
-
 </html>
 
     

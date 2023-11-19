@@ -12,7 +12,7 @@ body {
     top: 0; /* Coloca el contenido en la parte superior */
     left: 0; /* Coloca el contenido en la parte izquierda */
     width: 100%; /* Establece el ancho al 100% */
-    height: 101.5%; /* Establece la altura al 100% */
+    height: 102%; /* Establece la altura al 100% */
     background-color: rgba(0, 0, 0, 0.7); /* Establece el color de fondo a un negro semitransparente */
     z-index: -1; /* Establece un índice z para que la capa esté detrás de todo el contenido */
   }
@@ -31,10 +31,9 @@ body {
     text-align: left;
     margin-top: 20px;
 }
-.container label{ /*modificar los labels*/
+.container label{ /*modificar labels*/
     text-align: center;
     margin: 10px;
-    text-align: justify;
 }
 
 .inputs{ /*darle margenes superiores a los inputs*/
@@ -181,21 +180,13 @@ input[type="range"]::-moz-range-track { /* modificar el track del slider */
     display: flex;
     justify-content: flex-start; /* Alinea los elementos al principio del contenedor */
     margin-top: 20px; /* Añade margen para el espaciado */
+    margin-bottom: 20px;
 }
 
 .button-container1 button {
     margin-right: 10px; /* Ajusta según sea necesario */
 }
 
-.button-container2 {
-    display: flex;
-    justify-content: flex-start; /* Alinea los elementos al principio del contenedor */
-    margin-top: 20px; /* Añade margen para el espaciado */
-}
-
-.button-container2 button {
-    margin-right: 10px; /* Ajusta según sea necesario */
-}
 
 .input-field.comments{
     padding: 10px;
